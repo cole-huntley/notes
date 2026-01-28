@@ -6,6 +6,9 @@ export const api = new sst.aws.ApiGatewayV2("Api", {  //creating an API Gateway 
       handler: {
         link: [table],  //linking to the DynamoDB table
       },
+      args: {
+        auth: { iam: true }
+      },
     }
   }
 });
